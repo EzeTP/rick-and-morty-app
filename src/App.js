@@ -6,6 +6,8 @@ import Filters from "./components/Filters/Filters";
 
 
 function App() {
+  let api = `characters": "https://rickandmortyapi.com/api/character`;
+
   return (
     <div className="App">
       <h1 className="text-center poppins my-4"  >
