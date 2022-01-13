@@ -2,7 +2,7 @@ import React from 'react'
 import FilterButton from '../FilterButton'
 
 
-const Status = () => {
+const Status = ({ setStatus, setPageNumber }) => {
     let status = ["Alive", "Dead", "Unknown"];
     return (
         <div className="accordion-item">
@@ -15,7 +15,14 @@ const Status = () => {
 
                 <div className="accordion-body d-flex flex-wrap  gap-3 ">
                     {status.map((items, index) => (
-                        <FilterButton ket={index} name="status" index={index} items={items} />
+                        <FilterButton
+                            task={setStatus}
+                            setPageNumber={setPageNumber}
+                            key={index}
+                            name="status"
+                            index={index}
+                            items={items}
+                        />
 
                     ))}
                 </div>

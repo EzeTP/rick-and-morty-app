@@ -1,35 +1,40 @@
 import React from 'react'
 
-const FilterButton = ({ name, index, items}) => {
+const FilterButton = ({ name, index, items, task, setPageNumber }) => {
     return (
-        <>  
-        <style jsx>
-            {`
-            .form-check-input:checked + label {
+        <div>
+            <style jsx>
+                {`
+                .x:checked + label {
                 background-color: #0b5ed7;
                 color: white;
-
             }
 
 
-            input[type="radio"]{
-                display: none;
+                input[type="radio"]{
+                    display: none;
             }
             `}
-        </style>
+
+            </style>
+
             <div className="form-check">
                 <input
-                    className="form-check-input"
-                    type="radio" 
+                    onClick={() => {
+                        setPageNumber(1);
+                        task(items)
+                    }}
+                    className="form-check-input x"
+                    type="radio"
                     name={name}
                     id={`${name}-${index}`}
                 />
-                <label class="btn btn-outline-primary" for={    `${name}-${index}`}>
+                <label class="btn btn-outline-primary" for={`${name}-${index}`}>
                     {items}
                 </label>
             </div>
 
-        </>
+        </div>
     )
 }
 
