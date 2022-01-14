@@ -4,7 +4,7 @@ import InputGroup from '../components/Filters/Category/InputGroup';
 
 const Location = () => {
     let [info, setInfo] = useState([])
-    let [id, setID] = useState();
+    let [id, setID] = useState(1);
     let [results, setResults] = useState([])
     let { name, type, dimension } = info;
     let api = `https://rickandmortyapi.com/api/location/${id}`;
@@ -38,16 +38,16 @@ const Location = () => {
                 </h6>
             </div>
             <div className='row'>
-                <div className='col-3'>
+                <div className='col-lg-3 col-12'>
                     <h4 className='text-center mb-4'>
                         Pick Location
                     </h4>
                     <InputGroup setID={setID} name='Location' total={126} />
                 </div>
 
-                <div className='col-8'>
+                <div className='col-lg-8 col-12'>
                     <div className='row'>
-                        <Cards results={results} />
+                        <Cards page='/location/' results={results} />
                     </div>
                 </div>
             </div>

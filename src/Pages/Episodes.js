@@ -4,7 +4,7 @@ import InputGroup from '../components/Filters/Category/InputGroup';
 
 const Episodes = () => {
     let [info, setInfo] = useState([])
-    let [id, setID] = useState();
+    let [id, setID] = useState(1);
     let [results, setResults] = useState([])
     let { air_date, name } = info;
     let api = `https://rickandmortyapi.com/api/episode/${id}`;
@@ -35,16 +35,16 @@ const Episodes = () => {
                 </h5>
             </div>
             <div className='row'>
-                <div className='col-3'>
+                <div className='col-lg-3 col-12'>
                     <h4 className='text-center mb-4'>
                         Pick Episodes
                     </h4>
                     <InputGroup setID={setID} name='Episodes' total={51} />
                 </div>
 
-                <div className='col-8'>
+                <div className='col-lg-8 col-12'>
                     <div className='row'>
-                        <Cards results={results} />
+                        <Cards page='/episodes/' results={results} />
                     </div>
                 </div>
             </div>

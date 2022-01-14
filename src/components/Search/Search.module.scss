@@ -12,3 +12,21 @@
 .btn {
   box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
 }
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 576px){
+  .input{
+    width: 80%;
+  }
+  .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+}
+/* flex-sm-row flex-column align-items-center */
